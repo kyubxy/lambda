@@ -222,6 +222,7 @@ lexer ('/':xs)  = TokenLambda : lexer xs
 lexer ('.':xs)  = TokenDot : lexer xs
 lexer ('(':xs)  = TokenLParen : lexer xs
 lexer (')':xs)  = TokenRParen : lexer xs
+lexer (x:_)  = error ("Lexing error, unexpected charater " ++ [x])
 {-# LINE 1 "templates/GenericTemplate.hs" #-}
 -- $Id: GenericTemplate.hs,v 1.26 2005/01/14 14:47:22 simonmar Exp $
 

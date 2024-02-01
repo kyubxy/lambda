@@ -1,9 +1,11 @@
 module Absyn 
 (
-    Expression
+    Expression (..),
+    Absynable (..),
 ) where
 
-import Parser
+--import Parser (PtExpr(PtAbstract, PtApp), PtApp(PtApply, PtSimple), PtSimple(PtVar, PtBrack))
+import Parser (PtExpr(..), PtApp(..), PtSimple(..))
 
 data Expression 
     = Nul
@@ -15,7 +17,8 @@ data Expression
 instance Show Expression where
     show (Var v) = show v
     show (Abstract var term) = "\\" ++ show var ++ "." ++ show term
-    show (Apply t1 t2) = "(" ++ show t1 ++ ")(" ++ show t2 ++ ")"
+    -- TODO: only show brackets when contents have more than 1 term
+    show (Apply t1 t2) = "(" ++ show t1 ++ ")(" ++ show t2 ++ ")" 
     show Nul = "nul"
 
 class Absynable a where

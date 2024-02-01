@@ -4,18 +4,7 @@ module Lambda
 , toNormal
 ) where
 
-data Expression 
-    = Nul
-    | Var String 
-    | Abstract String Expression 
-    | Apply Expression Expression 
-    deriving (Eq, Read)
-
-instance Show Expression where
-    show (Var v) = show v
-    show (Abstract var term) = "\\" ++ show var ++ "." ++ show term
-    show (Apply t1 t2) = "(" ++ show t1 ++ ")(" ++ show t2 ++ ")"
-    show Nul = "nul"
+import Absyn (Expression(Nul, Var, Abstract, Apply))
 
 -- | applies alpha conversion on the given term by replacing the bound
 --   variable with the given one. Only works on abstractions.

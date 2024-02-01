@@ -62,5 +62,6 @@ lexer ('/':xs)  = TokenLambda : lexer xs
 lexer ('.':xs)  = TokenDot : lexer xs
 lexer ('(':xs)  = TokenLParen : lexer xs
 lexer (')':xs)  = TokenRParen : lexer xs
+lexer (x:_)  = error ("Lexing error, unexpected charater " ++ [x])
 
 }
