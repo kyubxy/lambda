@@ -4,7 +4,6 @@ module Absyn
     Absynable (..),
 ) where
 
---import Parser (PtExpr(PtAbstract, PtApp), PtApp(PtApply, PtSimple), PtSimple(PtVar, PtBrack))
 import Parser (PtExpr(..), PtApp(..), PtSimple(..))
 
 data Expression 

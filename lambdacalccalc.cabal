@@ -17,10 +17,19 @@ maintainer:          mentairicebowl@gmail.com
 build-type:          Simple
 extra-source-files:  CHANGELOG.md
 
+-- TODO: maybe make the lambda folder a library
+
 executable lambdacalccalc
   main-is:             Main.hs
   other-modules:       Parser, Lambda, Absyn
-  -- other-extensions:
-  build-depends:       array, base >=4.13 && <4.14 
-  hs-source-dirs:      src
+  hs-source-dirs:      src, lambda
+  build-depends:       array, base >=4.13 && <4.14
   default-language:    Haskell2010
+
+test-suite tests
+  type: exitcode-stdio-1.0
+  main-is: Main.hs 
+  other-modules: Parser, Lambda, Absyn
+  build-depends: array, base >=4.13 && <4.14, HUnit >=1.6
+  hs-source-dirs: tests, lambda
+  default-language: Haskell2010

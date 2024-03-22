@@ -3,8 +3,8 @@ module Main where
 import System.Exit
 
 import Parser (parse, lexer)
-import Absyn (genAbsyn)
-import Lambda (betaReduce)
+import Absyn (genAbsyn, Expression)
+import Lambda (toNormal)
 
 main = do
     print "kyubey's lambda calculus calculator"
@@ -17,5 +17,5 @@ interactive = do
     if input == "q" then
         exitSuccess
     else
-        (print . betaReduce . genAbsyn . parse . lexer) input
+        (print . toNormal . genAbsyn . parse . lexer) input
     interactive
