@@ -14,5 +14,7 @@ cabal build
 cabal run
 ```
 
+When using the interactive prompt, use `/` (forward slash) for lambdas.
+
 ## Lambda calculus is a very easy thing to check and do proofs on, why test instead of using a theorom proover like coq?
 idk, maybe later? testing is way easier.
