@@ -1,5 +1,5 @@
 # lambda
-Lambda calculus calculator
+Lambda calculus calculator. The predecessor to [some later work](https://github.com/kyubxy/LambdaCalc)
 
 ## What does it do
 It evaluates lambda calculus expressions using eager semantics (adjustable later maybe). Currently it can only parse and evaluate what its given in an
